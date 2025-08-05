@@ -1,0 +1,68 @@
+{
+  "name": "ccxt-mcp-server",
+  "version": "1.0.0",
+  "description": "TAPS v1.0 compliant MCP server for 100+ cryptocurrency exchanges via CCXT",
+  "main": "dist/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MyronKoch/ccxt-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MyronKoch/ccxt-mcp-server/issues"
+  },
+  "homepage": "https://github.com/MyronKoch/ccxt-mcp-server#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "node tests/comprehensive-test.js",
+    "test:quick": "node tests/test-direct.js",
+    "test:vpn": "node tests/test-vpn.cjs",
+    "test:v2": "node tests/test-v2.cjs",
+    "test:all": "npm run test && npm run test:integration",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "ccxt",
+    "cryptocurrency",
+    "trading",
+    "exchange",
+    "bitcoin",
+    "ethereum",
+    "taps"
+  ],
+  "author": "Myron Koch",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "ccxt": "^4.4.34",
+    "dotenv": "^16.4.5",
+    "lru-cache": "^11.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^1.2.0"
+  }
+}
